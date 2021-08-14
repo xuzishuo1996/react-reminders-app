@@ -1,3 +1,5 @@
+/* css selector ref: https://www.w3schools.com/cssref/css_selectors.asp */
+
 * {
   padding: 0;
   margin: 0;
@@ -32,9 +34,11 @@ footer {
   height: 2.5rem;
 }
 
+/* for <p> inside <footer> */
 footer p {
   color: #ccc;
 }
+
 .note {
   background: #fff;
   border-radius: 7px;
@@ -44,10 +48,12 @@ footer p {
   margin: 16px;
   float: left;
 }
+
 .note h1 {
   font-size: 1.1em;
   margin-bottom: 6px;
 }
+
 .note p {
   font-size: 1.1em;
   margin-bottom: 10px;
