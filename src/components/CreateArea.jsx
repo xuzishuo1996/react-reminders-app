@@ -20,6 +20,12 @@ function CreateArea(props) {
 
     function submitNode(event) {
         props.onAdd(note);
+
+        setNote({
+            title: "",
+            content: ""
+        });
+
         // prevent reloading of the page
         event.preventDefault();
     }
