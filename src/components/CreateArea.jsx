@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import AddIcon from '@material-ui/icons/Add';
+import Fab from '@material-ui/core/Fab';
+import Zoom from '@material-ui/core/Zoom';
 
 function CreateArea(props) {
 
@@ -46,9 +48,12 @@ function CreateArea(props) {
                     value={note.content} 
                     placeholder="Take a note..." 
                     rows="3" />
-                <button onClick={submitNode}>
-                    <AddIcon />
-                </button>
+                {/* https://material-ui.com/components/floating-action-button/#floating-action-button-2 */}
+                <Zoom in={true}>
+                    <Fab onClick={submitNode}>
+                        <AddIcon />
+                    </Fab>
+                </Zoom>
             </form>
         </div>
     );
