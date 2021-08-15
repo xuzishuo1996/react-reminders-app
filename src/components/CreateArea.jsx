@@ -5,6 +5,8 @@ import Zoom from '@material-ui/core/Zoom';
 
 function CreateArea(props) {
 
+    const [isExpanded, setExpanded] = useState(false);
+
     // useState hook: https://reactjs.org/docs/hooks-reference.html#usestate
     const [note, setNote] = useState({
         title: "",
@@ -32,24 +34,32 @@ function CreateArea(props) {
         // prevent reloading of the page
         event.preventDefault();
     }
+    
+    function expand() {
+        setExpanded(true);
+    }
 
     return (
         <div>
             <form className="create-note">
                 {/* inputs are controlled by the value field: https://reactjs.org/docs/forms.html#controlled-components */}
-                <input name="title" 
-                    onChange={handleChange}
-                    value={note.title} 
-                    placeholder="Title" 
-                />
+                {/* conditional rendering. equivalent to isExpanded ? <...> : null */}
+                {isExpanded && (
+                    <input name="title" 
+                        onChange={handleChange}
+                        value={note.title} 
+                        placeholder="Title" 
+                    />
+                )}
                 <textarea 
                     name="content" 
+                    onClick={expand}
                     onChange={handleChange} 
                     value={note.content} 
                     placeholder="Take a note..." 
-                    rows="3" />
+                    rows={isExpanded ? 3 : 1} />
                 {/* https://material-ui.com/components/floating-action-button/#floating-action-button-2 */}
-                <Zoom in={true}>
+                <Zoom in={isExpanded}>
                     <Fab onClick={submitNode}>
                         <AddIcon />
                     </Fab>
