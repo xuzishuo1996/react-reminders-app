@@ -8,6 +8,8 @@ html {
 }
 body {
   background: #eee;
+  /* https://www.transparenttextures.com/ */
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
   padding: 0 16px;
 }
 
