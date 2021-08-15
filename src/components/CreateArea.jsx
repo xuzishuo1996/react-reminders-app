@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AddIcon from '@material-ui/icons/Add';
 
 function CreateArea(props) {
 
@@ -32,7 +33,7 @@ function CreateArea(props) {
 
     return (
         <div>
-            <form>
+            <form className="create-note">
                 {/* inputs are controlled by the value field: https://reactjs.org/docs/forms.html#controlled-components */}
                 <input name="title" 
                     onChange={handleChange}
@@ -45,7 +46,9 @@ function CreateArea(props) {
                     value={note.content} 
                     placeholder="Take a note..." 
                     rows="3" />
-                <button onClick={submitNode}>Add</button>
+                <button onClick={submitNode}>
+                    <AddIcon />
+                </button>
             </form>
         </div>
     );
